@@ -85,7 +85,8 @@
       document.getElementById("input4").addEventListener("input", inputChange4);
 
       document.getElementById("save_btn").addEventListener("click", function () {
-        domtoimage.toPng(document.getElementById("output_area")).then(function (dataUrl) {
+        var node = document.getElementById("output_area");
+        domtoimage.toPng(node, { width: node.scrollWidth, height: node.scrollHeight }).then(function (dataUrl) {
           var a = document.createElement("a");
           a.href = dataUrl;
           a.download = "anohana.png";
