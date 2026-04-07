@@ -42,7 +42,7 @@
         margin-top: 230px;
       }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dom-to-image-more@3.4.5/dist/dom-to-image-more.min.js"></script>
   </head>
 
   <body>
@@ -85,9 +85,9 @@
       document.getElementById("input4").addEventListener("input", inputChange4);
 
       document.getElementById("save_btn").addEventListener("click", function () {
-        html2canvas(document.getElementById("output_area"), { useCORS: true, allowTaint: true }).then(function (canvas) {
+        domtoimage.toPng(document.getElementById("output_area")).then(function (dataUrl) {
           var a = document.createElement("a");
-          a.href = canvas.toDataURL("image/png");
+          a.href = dataUrl;
           a.download = "anohana.png";
           a.click();
         });
