@@ -1,5 +1,7 @@
 # あの花ロゴジェネレーター
 
+[GitHub Pages](https://magy-moonlit.github.io/anohana_logo_generator/)
+
 アニメ「あの日見た花の名前を僕達はまだ知らない。」風のロゴを生成するファンメイドツールです。
 
 ## 機能
