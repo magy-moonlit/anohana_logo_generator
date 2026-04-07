@@ -41,6 +41,7 @@
         margin-top: 230px;
       }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   </head>
 
   <body>
@@ -51,6 +52,7 @@
         <input type="text" id="input3" />
         <input type="text" id="input4" />
       </section>
+      <button id="save_btn">画像を保存</button>
     </div>
 
     <div id="output_area">
@@ -80,6 +82,15 @@
         document.getElementById("line4").innerHTML = event.currentTarget.value;
       }
       document.getElementById("input4").addEventListener("input", inputChange4);
+
+      document.getElementById("save_btn").addEventListener("click", function () {
+        html2canvas(document.getElementById("output_area")).then(function (canvas) {
+          var a = document.createElement("a");
+          a.href = canvas.toDataURL("image/png");
+          a.download = "anohana.png";
+          a.click();
+        });
+      });
     </script>
   </body>
 </html>
