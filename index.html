@@ -84,7 +84,7 @@
       document.getElementById("input4").addEventListener("input", inputChange4);
 
       document.getElementById("save_btn").addEventListener("click", function () {
-        html2canvas(document.getElementById("output_area")).then(function (canvas) {
+        html2canvas(document.getElementById("output_area"), { useCORS: true, allowTaint: true }).then(function (canvas) {
           var a = document.createElement("a");
           a.href = canvas.toDataURL("image/png");
           a.download = "anohana.png";
